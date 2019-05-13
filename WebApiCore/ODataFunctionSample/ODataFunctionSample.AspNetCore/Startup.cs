@@ -66,6 +66,11 @@ namespace ODataFunctionSample.AspNetCore
                 .Function("MostExpensive")
                 .Returns<double>();
 
+            productType.Collection
+                .Function("MostExpensive")
+                .Returns<double>()
+                .Parameter<int>("i");
+
             // Function bound to a collection
             // Returns the top 10 product, a collection
             productType.Collection

@@ -64,6 +64,14 @@ namespace ODataFunctionSample.AspNetCore.Controllers
             return Ok(retval);
         }
 
+        [HttpGet]
+        public IActionResult MostExpensive(int i)
+        {
+            var retval = _data.Max(pair => pair.Value.Price);
+
+            return Ok(retval);
+        }
+
         // Returns the top ten most expensive products
         [HttpGet]
         public IActionResult Top10()
